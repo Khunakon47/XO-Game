@@ -50,24 +50,24 @@
 }
 
 .home-start-btn {
-  background: linear-gradient(to right, #10B981, #059669);
+  background: linear-gradient(to right, #10b981, #059669);
 }
 .home-start-btn:hover {
   background: linear-gradient(to right, #059669, #047857);
 }
 
 .home-history-btn {
-  background: linear-gradient(to right, #3B82F6, #0891B2);
+  background: linear-gradient(to right, #3b82f6, #0891b2);
 }
 .home-history-btn:hover {
-  background: linear-gradient(to right, #2563EB, #0E7490);
+  background: linear-gradient(to right, #2563eb, #0e7490);
 }
 
 .home-settings-btn {
-  background: linear-gradient(to right, #A855F7, #EC4899);
+  background: linear-gradient(to right, #a855f7, #ec4899);
 }
 .home-settings-btn:hover {
-  background: linear-gradient(to right, #9333EA, #DB2777);
+  background: linear-gradient(to right, #9333ea, #db2777);
 }
 
 .home-setting-badge {
@@ -96,7 +96,7 @@
 
 .home-icon-joy {
   font-size: 6.4rem;
-  color: #FBBF24;
+  color: #fbbf24;
   animation: BallBounce 2.2s infinite;
 }
 
