@@ -1,0 +1,144 @@
+.home-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.home-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 440px;
+}
+
+.home-title {
+  color: white;
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.home-desc {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.home-btn-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-btn-group button {
+  margin-top: 1.2rem;
+  padding: 1.2rem 8rem;
+  font-weight: bold;
+  font-size: 1.04rem;
+  border: none;
+  border-radius: 0.8rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-start-btn {
+  background: linear-gradient(to right, #10B981, #059669);
+}
+.home-start-btn:hover {
+  background: linear-gradient(to right, #059669, #047857);
+}
+
+.home-history-btn {
+  background: linear-gradient(to right, #3B82F6, #0891B2);
+}
+.home-history-btn:hover {
+  background: linear-gradient(to right, #2563EB, #0E7490);
+}
+
+.home-settings-btn {
+  background: linear-gradient(to right, #A855F7, #EC4899);
+}
+.home-settings-btn:hover {
+  background: linear-gradient(to right, #9333EA, #DB2777);
+}
+
+.home-setting-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 0.72rem;
+  font-weight: bold;
+  margin-left: 0.4rem;
+}
+
+.icon {
+  margin-right: 0.4rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.icon-start {
+  animation: fadeIn 1.2s infinite alternate;
+}
+
+.home-icon-joy {
+  font-size: 6.4rem;
+  color: #FBBF24;
+  animation: BallBounce 2.2s infinite;
+}
+
+@keyframes BallBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  20% {
+    transform: translateY(-22px) scale(1);
+    animation-timing-function: cubic-bezier(0.55, 0.09, 0.68, 0.53);
+  }
+
+  40% {
+    transform: translateY(0) scale(1.08, 0.92);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  55% {
+    transform: translateY(-12px) scale(1);
+  }
+
+  70% {
+    transform: translateY(0) scale(1.04, 0.96);
+  }
+
+  82% {
+    transform: translateY(-6px) scale(1);
+  }
+
+  92% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
