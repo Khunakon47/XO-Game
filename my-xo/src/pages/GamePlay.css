@@ -416,6 +416,33 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .gameplay-container {
+    width: 95%;
+    max-width: 500px;
+    padding: 1.2rem;
+  }
+
+  .gameplay-title {
+    font-size: 1.4rem;
+  }
+
+  .game-status {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  .game-status span {
+    font-size: 1rem;
+  }
+
+  .game-board {
+    max-width: 380px;
+  }
+
+  .game-cell {
+    font-size: clamp(1rem, 3vw, 2rem);
+  }
+
   .winner-modal {
     padding: 2rem;
   }
@@ -442,5 +469,68 @@
 
   .confirm-text {
     font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameplay-container {
+    width: 98%;
+    padding: 1rem;
+  }
+
+  .gameplay-title {
+    font-size: 1.2rem;
+  }
+
+  .gameplay-back-btn,
+  .gameplay-reset-btn {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .game-status {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .game-status span {
+    font-size: 0.9rem;
+  }
+
+  .game-board {
+    max-width: 320px;
+    gap: 0.3rem;
+  }
+
+  .game-cell {
+    font-size: clamp(0.9rem, 3vw, 1.8rem);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .winner-modal {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .modal-icon {
+    font-size: 3.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+  .modal-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .modal-info {
+    font-size: 0.85rem;
+  }
+
+  .modal-btn {
+    font-size: 0.85rem;
+    padding: 0.8rem;
   }
 }

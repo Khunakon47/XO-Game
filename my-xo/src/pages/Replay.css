@@ -297,6 +297,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .replay-container {
+    width: 95%;
+    max-width: 500px;
     padding: 1.2rem;
   }
 
@@ -304,11 +306,83 @@
     font-size: 1.2rem;
   }
 
+  .replay-board {
+    max-width: 380px;
+  }
+
   .control-btn {
     padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
   }
 
   .moves-list {
     grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .replay-container {
+    width: 98%;
+    padding: 1rem;
+    max-height: 95vh;
+  }
+
+  .replay-header {
+    margin-bottom: 1.2rem;
+  }
+
+  .replay-back-btn {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .replay-title {
+    font-size: 1.1rem;
+  }
+
+  .replay-info {
+    padding: 0.8rem;
+  }
+
+  .info-row {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+  }
+
+  .replay-board {
+    max-width: 320px;
+    gap: 0.3rem;
+    padding: 0.6rem;
+  }
+
+  .replay-cell {
+    font-size: 1.5rem;
+  }
+
+  .replay-controls {
+    gap: 0.4rem;
+  }
+
+  .control-btn {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .replay-progress {
+    gap: 0.5rem;
+  }
+
+  .progress-text {
+    font-size: 0.85rem;
+  }
+
+  .moves-list {
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    gap: 0.3rem;
+  }
+
+  .move-item {
+    font-size: 0.75rem;
+    padding: 0.4rem;
   }
 }

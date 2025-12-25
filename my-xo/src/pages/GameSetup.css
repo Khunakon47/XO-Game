@@ -273,3 +273,100 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-setup-container {
+    width: 95%;
+    max-width: 420px;
+    padding: 1.2rem;
+  }
+
+  .game-setup-title {
+    font-size: 1.4rem;
+  }
+
+  .option-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .option-btn {
+    padding: 0.8rem 0.3rem;
+  }
+
+  .option-number {
+    font-size: 1.4rem;
+  }
+
+  .option-text {
+    font-size: 0.6rem;
+  }
+
+  .mode-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .game-setup-btn-group {
+    gap: 0.6rem;
+  }
+
+  .game-setup-btn-group button {
+    font-size: 0.75rem;
+    padding: 0.8rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-setup-container {
+    width: 98%;
+    padding: 1rem;
+  }
+
+  .game-setup-title {
+    font-size: 1.2rem;
+  }
+
+  .game-setup-desc {
+    font-size: 0.9rem;
+  }
+
+  .setup-label {
+    font-size: 0.9rem;
+  }
+
+  .option-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+  }
+
+  .option-btn {
+    padding: 0.6rem 0.2rem;
+  }
+
+  .option-number {
+    font-size: 1.2rem;
+  }
+
+  .option-text {
+    font-size: 0.55rem;
+  }
+
+  .mode-card {
+    padding: 0.8rem;
+  }
+
+  .mode-icon {
+    font-size: 2rem;
+  }
+
+  .mode-title {
+    font-size: 0.85rem;
+  }
+
+  .game-setup-btn-group button {
+    font-size: 0.7rem;
+    padding: 0.6rem 0;
+  }
+}
