@@ -1,16 +1,249 @@
-# React + Vite
+# XO Game (Tic Tac Toe) – React Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+XO Game เป็นเกม Tic Tac Toe ที่พัฒนาด้วย **React (Web Application)**
+ออกแบบให้รองรับ **ขนาดกระดานแบบ Dynamic**, มี **AI Bot**, ระบบ **บันทึกประวัติการเล่น**, และสามารถ **Replay เกมย้อนหลังได้**
 
-Currently, two official plugins are available:
+โปรเจกต์นี้จัดทำขึ้นเพื่อใช้เป็น **แบบทดสอบสมัครฝึกงาน (Internship Assignment)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 🎯 **Dynamic Board Size**
+  รองรับขนาดตั้งแต่ 3x3 ไปจนถึง 7x7 (หรือมากกว่า)
 
-## Expanding the ESLint configuration
+* 🏆 **Custom Win Condition**
+  กำหนดจำนวนตัวที่ต้องเรียงเพื่อชนะได้ (เช่น 3, 4, 5 ตัว)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 🤖 **AI Opponent (Bot)**
+  เล่นกับคอมพิวเตอร์โดยใช้ Algorithm ที่เหมาะสมกับขนาดกระดาน
+
+* 👥 **Multiple Game Modes**
+
+  * Player vs Player
+  * Player vs AI
+
+* 📊 **Game History Storage**
+  บันทึกประวัติการเล่นสูงสุด 50 เกม
+
+* 🎬 **Replay System**
+  เล่นย้อนดูเกมเดิมได้ทีละก้าว (step-by-step)
+
+* 📱 **Responsive UI**
+  รองรับทั้ง Desktop และ Tablet
+
+---
+
+## 🚀 Installation & Running
+
+### Prerequisites
+
+* **Node.js** version 16 or higher
+* **npm** or **yarn**
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/Khunakon47/XO-Game.git
+cd XO-Game/my-xo
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Development Server
+
+```bash
+npm run dev
+```
+
+เปิดเบราว์เซอร์ที่
+`http://localhost:5173`
+
+### 4. Build for Production
+
+```bash
+npm run build
+```
+
+### 5. Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## 🎮 How to Play
+
+1. **Home Page**
+   กดปุ่ม `Start Game`
+
+2. **Game Setup**
+
+   * เลือกขนาดกระดาน (3x3 – 7x7)
+   * เลือกจำนวนตัวที่ต้องเรียงเพื่อชนะ
+   * เลือกโหมด (Vs AI / Vs Player)
+
+3. **Gameplay**
+
+   * คลิกช่องว่างเพื่อวาง X หรือ O
+   * ระบบจะสลับผู้เล่นอัตโนมัติ
+   * AI จะเดินทันทีเมื่อถึงตา
+
+4. **History**
+
+   * ดูเกมที่เคยเล่น
+   * เลือก Replay เกมย้อนหลังได้
+
+5. **Replay Mode**
+
+   * เล่นอัตโนมัติ
+   * เลื่อนดูทีละก้าว (forward / backward)
+
+---
+
+## 🏗️ Project Structure
+
+```
+my-xo/
+├── src/
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── GameSetup.jsx
+│   │   ├── GamePlay.jsx
+│   │   ├── History.jsx
+│   │   └── Replay.jsx
+│   ├── components/
+│   │   ├── ConfirmModal.jsx
+│   │   └── HistoryItem.jsx
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## 🧠 Program Design Overview
+
+### GamePlay.jsx
+
+* จัดการ state ของกระดานเกม
+* ตรวจสอบเงื่อนไขชนะ (Dynamic Win Condition)
+* คำนวณการเดินของ AI
+* บันทึกข้อมูลเกมลง History
+
+### History.jsx
+
+* อ่านข้อมูลจาก `localStorage`
+* แสดงประวัติเกมพร้อมวันเวลา
+* ลบประวัติเดี่ยวหรือทั้งหมด
+* เลือก Replay เกมที่ต้องการ
+
+### Replay.jsx
+
+* แสดงการเดินย้อนหลังจาก history
+* ควบคุมด้วย play / pause
+* เลื่อนดูทีละก้าวได้
+
+---
+
+## 🤖 AI Algorithm Design
+
+### Algorithm Used
+
+**Minimax Algorithm with Alpha-Beta Pruning**
+
+#### Small Board (3x3 – 4x4)
+
+* คำนวณล่วงหน้าสูงสุด 6 steps
+* ประเมินทุกความเป็นไปได้
+* เลือกทางเลือกที่ดีที่สุด
+
+#### Large Board (5x5+)
+
+เพื่อประสิทธิภาพ ระบบจะใช้ **Heuristic-based Decision**
+
+1. ตรวจสอบว่าชนะได้ทันทีหรือไม่
+2. ป้องกันการชนะของฝั่งตรงข้าม
+3. ประเมินตำแหน่งจาก:
+
+   * ระยะจากจุดกึ่งกลาง
+   * ความต่อเนื่องของตัวเอง
+
+### Performance Optimization
+
+* Alpha-Beta Pruning ลดจำนวน node ที่ต้องคำนวณ
+* จำกัดความลึกของการคิด
+* ปรับ Algorithm ตามขนาดกระดาน
+
+---
+
+## 💾 Game History Storage
+
+### Stored Data Structure (localStorage)
+
+```json
+{
+  "gameHistory": [
+    {
+      "boardSize": 3,
+      "winCondition": 3,
+      "mode": "ai",
+      "winner": "X",
+      "moves": [
+        { "index": 4, "player": "X" },
+        { "index": 1, "player": "O" }
+      ],
+      "timestamp": 1703520000000
+    }
+  ]
+}
+```
+
+### History Features
+
+* เก็บสูงสุด 50 เกม
+* บันทึกทุกการเดิน
+* แสดงวันและเวลาที่เล่น
+* รองรับ Replay ทุกเกม
+
+---
+
+## 🛠️ Technologies Used
+
+* **React 19**
+* **Vite**
+* **JavaScript (ES6+)**
+* **CSS3**
+* **React Hooks**
+* **localStorage**
+* **ESLint**
+
+---
+
+## ✅ Requirement Checklist (HR Assignment)
+
+* ✅ Dynamic XO Board Size
+* ✅ Game History & Replay
+* ✅ AI Bot Opponent
+* ✅ Public GitHub Repository
+* ✅ Complete README (Setup, Design, Algorithm)
+
+---
+
+## 📌 Repository
+
+GitHub: [https://github.com/Khunakon47/XO-Game](https://github.com/Khunakon47/XO-Game)
+
+**Developer:** Khunakon Saengthopho
+
+---
+
+## 📄 License
+
+This project is developed for internship evaluation purposes only.
